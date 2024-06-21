@@ -38,31 +38,33 @@ const technologies = [
 
 const Technologies = () => {
     return (
-        <div className="h-auto">
-            <motion.h1
-                whileInView={{ opacity: 1, y: 0 }}
-                initial={{ opacity: 0, y: -100 }}
-                transition={{ duration: 1.5 }}
-                className="mb-20 text-center text-4xl my-20">Technologies</motion.h1>
-            <motion.div
-                whileInView={{ opacity: 1, x: 0 }}
-                initial={{ opacity: 0, x: -100 }}
-                transition={{ duration: 1.5 }}
-                className="flex flex-wrap items-center justify-center gap-4">
-                {technologies.map((tech, index) => (
-                    <motion.div
-                        key={index}
-                        variants={iconVariants(getRandomDelay())}
-                        initial="initial"
-                        animate="animate"
-                        className={`rounded-2xl border-4 ${tech.borderColor} p-4`}
-                        aria-label={tech.icon.type.displayName}
-                    >
-                        {tech.icon}
-                    </motion.div>
-                ))}
-            </motion.div>
-        </div>
+        <section id="technologies">
+            <div className="h-auto">
+                <motion.h1
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: -100 }}
+                    transition={{ duration: 1.5 }}
+                    className="mb-20 text-center text-4xl my-20">Technologies</motion.h1>
+                <motion.div
+                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 1.5 }}
+                    className="flex flex-wrap items-center justify-center gap-4">
+                    {technologies.map((tech, index) => (
+                        <motion.div
+                            key={index}
+                            variants={iconVariants(getRandomDelay())}
+                            initial="initial"
+                            animate="animate"
+                            className={`rounded-2xl border-4 ${tech.borderColor} p-4`}
+                            aria-label={tech.icon.type.displayName}
+                        >
+                            {tech.icon}
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </div>
+        </section>
     );
 }
 
