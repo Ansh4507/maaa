@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaLinkedin, FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
 import { IoMenu, IoClose } from "react-icons/io5";
-
+import { motion } from 'framer-motion';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,11 +15,31 @@ const Navbar = () => {
                 <h1>Vs</h1>
             </div>
             <div className="right md:flex text-2xl gap-4 hidden">
-                <FaLinkedin />
-                <FaGithub />
-                <FaInstagram />
-                <FaDiscord />
-            </div>
+            <motion.div
+                whileHover={{ scale: 1.1, rotate: [-5, 5, -3, 3, 0], transition: { duration: 0.3 } }}
+                className="cursor-pointer"
+            >
+                <FaLinkedin className="text-2xl  hover:text-blue-700" />
+            </motion.div>
+            <motion.div
+                whileHover={{ scale: 1.1, rotate: [-5, 5, -3, 3, 0], transition: { duration: 0.3 } }}
+                className="cursor-pointer"
+            >
+                <FaGithub className="text-2xl hover:text-gray-800" />
+            </motion.div>
+            <motion.div
+                whileHover={{ scale: 1.1, rotate: [-5, 5, -3, 3, 0], transition: { duration: 0.3 } }}
+                className="cursor-pointer"
+            >
+                <FaInstagram className="text-2xl  hover:text-pink-700" />
+            </motion.div>
+            <motion.div
+                whileHover={{ scale: 1.1, rotate: [-5, 5, -3, 3, 0], transition: { duration: 0.3 } }}
+                className="cursor-pointer"
+            >
+                <FaDiscord className="text-2xl hover:text-purple-800" />
+            </motion.div>
+        </div>
             <div className='flex md:hidden text-2xl'>
                 {menuOpen ? (
                     <div className="flex flex-col items-end mt-12">

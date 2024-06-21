@@ -1,4 +1,4 @@
-import pic2 from '../assets/picc.png';
+import pic2 from '../assets/mera ek or photo.png';
 import { motion } from "framer-motion";
 
 
@@ -17,8 +17,8 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="left w-full md:w-1/2 flex justify-center items-center p-4">
-          <img src={pic2} alt="About Pic" className="h-auto max-h-full" />
+          className="left w-full md:w-1/2 flex justify-center items-center p-4 ">
+          <img src={pic2} alt="About Pic" className="h-auto max-h-full rounded-md " />
         </motion.div>
         <motion.div
           whileInView={{ opacity: 1, x: 0 }}

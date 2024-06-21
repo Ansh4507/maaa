@@ -1,5 +1,5 @@
 import { ReactTyped } from 'react-typed';
-import pic1 from '../assets/picc.png';
+import pic1 from '../assets/mera ek or photo .jpeg';
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -33,23 +33,27 @@ const Hero = () => {
                         loop
                     />
                 </motion.span>
-                <div className='flex gap-4 my-6'>
-                    <button className='flex bg-slate-400 text-black py-1 px-2 rounded-md'>Resume
+                <motion.div
+                    variants={container(0.5)}
+                    initial="hidden"
+                    animate="visible"
+                    className='flex gap-4 my-6'>
+                    <button className='flex text-slate-300 py-1 px-2 rounded-2xl border-4  border-slate-500 p-4'>Resume
                         <MdOutlineFileDownload className='flex items-center justify-center text-2xl' />
                     </button>
                     <div className='flex gap-8'>
-                        <button className='flex bg-slate-400 text-black py-1 px-2 rounded-md'>Let&apos;s Connect
+                        <button className='flex text-slate-300 py-1 px-2 rounded-2xl border-4  border-slate-500 p-4'>Let&apos;s Connect
                             <FaArrowRight className='flex items-center justify-center text-md my-auto hover:ml-1' />
                         </button>
                     </div>
-                </div>
+                </motion.div>
             </div>
             <div className="right w-full lg:w-1/2 lg:p-8">
                 <div className='flex justify-center '>
                     <motion.img
                         initial={{ x: 100, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5}}
+                        transition={{ duration: 1, delay: 0.5 }}
                         className="rounded-lg" src={pic1} alt="Vivek's Profile Pic" />
                 </div>
             </div>

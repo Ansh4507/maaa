@@ -1,84 +1,70 @@
-import emailjs from 'emailjs-com';
-import { useState } from 'react';
+import paper from "../assets/paper.png";
+import { motion } from "framer-motion";
 
-const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        email: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        emailjs.send(
-            'YOUR_SERVICE_ID', // Replace with your EmailJS Service ID
-            'YOUR_TEMPLATE_ID', // Replace with your EmailJS Template ID
-            formData,
-            'YOUR_USER_ID' // Replace with your EmailJS User ID
-        )
-            .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
-                alert('Message sent successfully!');
-            })
-            .catch((err) => {
-                console.log('FAILED...', err);
-                alert('Failed to send message, please try again later.');
-            });
-
-        // Clear the form after submission
-        setFormData({
-            email: '',
-            message: ''
-        });
-    };
-
+const Contact = () => {
     return (
-        <div className="h-auto p-4">
-            <h1 className="mb-10 text-center text-4xl font-bold my-20 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-                Contact Me
-            </h1>
-            <div className="flex flex-wrap justify-around items-center">
-                <form onSubmit={handleSubmit} className="max-w-md p-6 bg-white rounded-lg shadow-md w-full md:w-1/2">
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email</label>
+        <div className="relative w-full h-screen flex flex-col items-center justify-center">
+            <motion.h1
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: -100 }}
+                transition={{ duration: 1.5 }}
+                className="text-center text-4xl mb-8"
+            >
+                Let&apos;s Connect
+            </motion.h1>
+            <motion.img
+                whileInView={{ x: 0, opacity: 1 }}
+                initial={{ x: -100, opacity: 0 }}
+                transition={{ duration: 1, delay: 1.0 }}
+                src={paper}
+                className="absolute inset-0 w-full h-full object-cover hidden md:flex"
+            />
+            <motion.div 
+            whileInView={{ y: 0, opacity: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            transition={{ duration: 1, delay: 1.0 }}
+            className="relative w-full max-w-md p-6 bg-gray-950 bg-opacity-90 rounded-lg shadow-lg z-10">
+                <form className="space-y-4">
+                    <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 bg-transparent">
+                            Name
+                        </label>
                         <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                            type="text"
+                            id="name"
+                            className="mt-1 p-2 w-full border rounded-md bg-transparent"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Message</label>
+                    <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 bg-transparent">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            className="mt-1 p-2 w-full border rounded-md bg-transparent"
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 bg-transparent">
+                            Message
+                        </label>
                         <textarea
-                            name="message"
                             id="message"
-                            rows="6"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-indigo-500"
+                            rows="4"
+                            className="mt-1 p-2 w-full border rounded-md bg-transparent"
                         ></textarea>
                     </div>
                     <button
                         type="submit"
-                        className="w-full py-2 px-4 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold rounded-md transition transform hover:scale-105"
+                        className="  w-full py-2 px-4 bg-customBlue text-white font-semibold rounded-md hover:bg-customDarkBlue transition duration-200"
                     >
-                        Send
+                        Submit
                     </button>
                 </form>
-            </div>
+            </motion.div>
         </div>
     );
-}
+};
 
-export default ContactForm;
+export default Contact;
