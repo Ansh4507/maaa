@@ -13,7 +13,7 @@ const VerticalNavbar = () => {
                 animate={initialHover ? { opacity: 0, y: -100 } : {}}
                 transition={{ duration: 1.5 }}
                 onHoverStart={() => setInitialHover(true)}
-                className="fixed top-0 left-0 h-full w-16 bg-transparent md:flex flex-col items-center justify-center py-4 z-50 hidden"
+                className="fixed top-0 left-0 h-full w-16 bg-transparent lg:flex flex-col items-center justify-center py-4 z-50 hidden"
             >
                 <ul className="flex flex-col items-center gap-24">
                     <motion.li

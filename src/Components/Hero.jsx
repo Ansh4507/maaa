@@ -27,7 +27,7 @@ const Hero = () => {
                         variants={container(0.5)}
                         initial="hidden"
                         animate="visible"
-                        className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text  text-3xl md:text-4xl tracking-tight text-transparent">
+                        className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl md:text-4xl tracking-tight text-transparent">
                         <ReactTyped
                             strings={["Full Stack Developer", "DevOps Engineer"]}
                             typeSpeed={100}
@@ -41,14 +41,13 @@ const Hero = () => {
                         animate="visible"
                         className='flex gap-4 my-6'>
                         <a href='https://drive.google.com/file/d/19ekvp4pDKINi5rJCodg6HHLmskBIKqgz/view' target='_blank'>
-                            <button className='flex text-slate-300 py-1 px-2 rounded-2xl border-4  border-slate-500 p-4'>Resume
-                                <MdOutlineFileDownload className='flex items-center justify-center text-2xl' />
+                            <button className='flex text-slate-300 py-1 px-2 rounded-2xl border-4  border-slate-500 p-4 text-sm md:text-md'>Resume
+                                <MdOutlineFileDownload className='flex items-center justify-center text-lg md:text-xl' />
                             </button></a>
                         <div className='flex gap-8'>
                             <Link to="contact" smooth={true} duration={1500}>
-
-                                <button className='flex text-slate-300 py-1 px-2 rounded-2xl border-4  border-slate-500 p-4'>Let&apos;s Connect
-                                    <FaArrowRight className='flex items-center justify-center text-md my-auto hover:ml-1' />
+                                <button className='flex text-slate-300 py-1 px-2 rounded-2xl border-4  border-slate-500 p-4 text-sm md:text-md'>Let&apos;s Connect
+                                    <FaArrowRight className='flex items-center justify-center text-sm md:text-md my-auto hover:ml-1' />
                                 </button>
                             </Link>
                         </div>
@@ -60,7 +59,7 @@ const Hero = () => {
                             initial={{ x: 100, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
                             transition={{ duration: 1, delay: 0.5 }}
-                            className="rounded-lg" src={pic1} alt="Vivek's Profile Pic" />
+                            className="rounded-lg overflow-hidden" src={pic1} alt="Vivek's Profile Pic" />
                     </div>
                 </div>
             </div >
