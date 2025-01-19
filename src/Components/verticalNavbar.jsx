@@ -21,7 +21,7 @@ const VerticalNavbar = () => {
                         whileHover={{ rotate: 0 }}
                         className="transform -rotate-90 text-white cursor-pointer"
                     >
-                        <Link to="hero" smooth={true} duration={1500}>
+                        <Link to="navbar" smooth={true} duration={1500}>
                             Home
                         </Link>
                     </motion.li>

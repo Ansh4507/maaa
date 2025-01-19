@@ -1,4 +1,5 @@
-import { FaLinkedin, FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaDiscord } from 'react-icons/fa';
+import { SiLeetcode , SiMedium } from "react-icons/si";
 
 const Footer = () => {
     return (
@@ -10,7 +11,8 @@ const Footer = () => {
                 <ul className='flex gap-2 md:gap-4 md:text-2xl text-sm md:text-md font-thin text-gray-500'>
                     <a href='https://www.linkedin.com/in/vivek-shaurya/' target='_blank'><li><FaLinkedin /> </li></a>
                     <a href='https://github.com/MRPERFECT0603' target='_blank'><li><FaGithub /></li></a>
-                    <a href='https://www.instagram.com/valour__sagacious/' target='_blank'><li><FaInstagram /></li></a>
+                    <a href='https://leetcode.com/u/VivekShaurya/' target='_blank'><li><SiLeetcode /></li></a>
+                    <a href='https://medium.com/@vivek_shaurya' target='_blank'><li><SiMedium /></li></a>
                     <a href='https://discordapp.com/users/mrperfect06#4663' target='_blank'><li><FaDiscord /></li></a>
                 </ul>
             </div>

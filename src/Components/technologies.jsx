@@ -1,5 +1,6 @@
 import { FaReact, FaNodeJs, FaDocker, FaAws } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiApachekafka } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiApachekafka , SiTypescript , SiRabbitmq ,SiPostgresql} from "react-icons/si";
+import { TbBrandCpp } from "react-icons/tb";
 import { IoLogoJavascript } from "react-icons/io5";
 import { GrMysql } from "react-icons/gr";
 import { AiOutlineKubernetes } from "react-icons/ai";
@@ -24,15 +25,19 @@ const iconVariants = (delay) => ({
 });
 
 const technologies = [
+    { icon: <TbBrandCpp className="text-4xl text-yellow-500" />, borderColor: "border-slate-500" },
     { icon: <IoLogoJavascript className="text-4xl text-yellow-500" />, borderColor: "border-slate-500" },
+    { icon: <SiTypescript className="text-4xl text-blue-500" />, borderColor: "border-slate-500" },
     { icon: <FaReact className="text-4xl text-blue-500" />, borderColor: "border-slate-500" },
     { icon: <FaNodeJs className="text-4xl text-green-600" />, borderColor: "border-slate-500" },
     { icon: <SiTailwindcss className="text-4xl text-teal-500" />, borderColor: "border-slate-500" },
     { icon: <SiMongodb className="text-4xl text-green-500" />, borderColor: "border-slate-500" },
     { icon: <GrMysql className="text-4xl text-blue-600" />, borderColor: "border-slate-500" },
+    { icon: <SiPostgresql className="text-4xl text-blue-600" />, borderColor: "border-slate-500" },
     { icon: <FaDocker className="text-4xl text-blue-500" />, borderColor: "border-slate-500" },
     { icon: <AiOutlineKubernetes className="text-4xl text-blue-600" />, borderColor: "border-slate-500" },
     { icon: <SiApachekafka className="text-4xl text-white" />, borderColor: "border-slate-500" },
+    { icon: <SiRabbitmq className="text-4xl text-orange-500" />, borderColor: "border-slate-500" },
     { icon: <FaAws className="text-4xl text-orange-500" />, borderColor: "border-slate-500" },
 ];
 
@@ -49,7 +54,7 @@ const Technologies = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     initial={{ opacity: 0, x: -100 }}
                     transition={{ duration: 1.5 }}
-                    className="flex flex-wrap items-center justify-center gap-4">
+                    className="flex flex-wrap items-center justify-center gap-4 md:mx-40">
                     {technologies.map((tech, index) => (
                         <motion.div
                             key={index}

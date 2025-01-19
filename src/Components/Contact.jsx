@@ -7,7 +7,7 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: ''
+        message: '',
     });
 
     const handleChange = (e) => {
@@ -39,12 +39,12 @@ const Contact = () => {
 
     return (
         <section id="contact">
-            <div className="relative w-full h-screen flex flex-col items-center justify-center">
+            <div className="relative mt-20 w-full h-screen flex items-center justify-center">
                 <motion.h1
                     whileInView={{ opacity: 1, y: 0 }}
                     initial={{ opacity: 0, y: -100 }}
                     transition={{ duration: 1.5 }}
-                    className="text-center text-4xl mb-8"
+                    className="absolute top-8 text-center text-4xl"
                 >
                     Let&apos;s Connect
                 </motion.h1>
@@ -59,52 +59,74 @@ const Contact = () => {
                     whileInView={{ y: 0, opacity: 1 }}
                     initial={{ y: 100, opacity: 0 }}
                     transition={{ duration: 1, delay: 1.0 }}
-                    className="relative w-full max-w-md p-6 bg-gray-950 bg-opacity-90 rounded-lg shadow-lg z-10"
+                    className="relative w-full max-w-5xl p-6 bg-gray-950 bg-opacity-90 rounded-lg shadow-lg z-10 flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6"
                 >
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 bg-transparent">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                className="mt-1 p-2 w-full border rounded-md bg-transparent"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 bg-transparent">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className="mt-1 p-2 w-full border rounded-md bg-transparent"
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-medium text-gray-700 bg-transparent">
-                                Message
-                            </label>
-                            <textarea
-                                id="message"
-                                rows="4"
-                                value={formData.message}
-                                onChange={handleChange}
-                                className="mt-1 p-2 w-full border rounded-md bg-transparent"
-                            ></textarea>
-                        </div>
-                        <button
-                            type="submit"
-                            className="w-full py-2 px-4 bg-customBlue text-white font-semibold rounded-md hover:bg-customDarkBlue transition duration-200"
-                        >
-                            Submit
-                        </button>
-                    </form>
+                    {/* Left Column: Contact Details */}
+                    <div className="w-full md:w-1/2 flex flex-col justify-center p-6 text-white space-y-4 border-r border-gray-700">
+                        <h2 className="text-3xl font-bold">Contact Information</h2>
+                        <p className="text-sm">
+                            <strong>Phone:</strong> +91-9801096437
+                        </p>
+                        <p className="text-sm">
+                            <strong>Email:</strong> vivekshaurya62@gmail.com
+                        </p>
+                        <p className="text-sm">
+                            <strong>Address:</strong> Sec-62, Noida, UP
+                        </p>
+                        <p className="text-sm">
+                            Feel free to reach out to me for collaborations, queries, or any other information.<br></br><br></br>
+                            <hr></hr><br></br>
+                            Love 💙 & Peace ☮️
+                        </p>
+                    </div>
+
+                    {/* Right Column: Form (Hidden on Small Screens) */}
+                    <div className="w-full md:w-1/2 hidden sm:block">
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 bg-transparent">
+                                    Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className="mt-1 p-2 w-full border rounded-md bg-transparent"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 bg-transparent">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className="mt-1 p-2 w-full border rounded-md bg-transparent"
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 bg-transparent">
+                                    Message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    rows="4"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className="mt-1 p-2 w-full border rounded-md bg-transparent"
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full py-2 px-4 bg-customBlue text-white font-semibold rounded-md hover:bg-customDarkBlue transition duration-200"
+                            >
+                                Submit
+                            </button>
+                        </form>
+                    </div>
                 </motion.div>
             </div>
         </section>

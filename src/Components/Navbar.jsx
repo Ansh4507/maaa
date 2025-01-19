@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaDiscord } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaDiscord } from 'react-icons/fa';
+import { SiLeetcode , SiMedium } from "react-icons/si";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { motion } from 'framer-motion';
 const Navbar = () => {
@@ -10,6 +11,7 @@ const Navbar = () => {
     };
 
     return (
+        <section id="navbar">
         <div className='flex h-12 justify-between items-center mx-10 py-3 my-10'>
             <div className="left text-4xl font-medium">
                 <h1>Vs</h1>
@@ -33,8 +35,15 @@ const Navbar = () => {
                     whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
                     className="cursor-pointer"
                 >
-                    <a href='https://www.instagram.com/valour__sagacious/' target='_blank'>
-                        <FaInstagram className="text-2xl  hover:text-pink-700" /></a>
+                    <a href='https://leetcode.com/u/VivekShaurya/' target='_blank'>
+                        <SiLeetcode className="text-2xl  hover:text-orange-600" /></a>
+                </motion.div>
+                <motion.div
+                    whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
+                    className="cursor-pointer"
+                >
+                    <a href='https://medium.com/@vivek_shaurya' target='_blank'>
+                        <SiMedium className="text-2xl hover:text-black" /></a>
                 </motion.div>
                 <motion.div
                     whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
@@ -53,8 +62,10 @@ const Navbar = () => {
                                 <FaLinkedin /></a>
                             <a href='https://github.com/MRPERFECT0603' target='_blank'>
                                 <FaGithub /></a>
-                            <a href='https://www.instagram.com/valour__sagacious/' target='_blank'>
-                                <FaInstagram /></a>
+                            <a href='https://leetcode.com/u/VivekShaurya/' target='_blank'>
+                                <SiLeetcode /></a>
+                            <a href='https://medium.com/@vivek_shaurya' target='_blank'>
+                                <SiMedium /></a>
                             <a href='https://discordapp.com/users/mrperfect06#4663' target='_blank'>
                                 <FaDiscord /></a>
                         </div>
@@ -64,6 +75,8 @@ const Navbar = () => {
                 )}
             </div>
         </div>
+
+        </section>
     );
 };
 
