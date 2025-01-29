@@ -1,83 +1,23 @@
-import { useState } from 'react';
-import { FaLinkedin, FaGithub, FaDiscord } from 'react-icons/fa';
-import { SiLeetcode , SiMedium } from "react-icons/si";
-import { IoMenu, IoClose } from "react-icons/io5";
-import { motion } from 'framer-motion';
-const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+// src/components/Navbar.jsx
+import React from "react";
+import { Link } from "react-router-dom";
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
+function Navbar() {
+  return (
+    <nav className="bg-blue-600 text-white p-4 sticky top-0 z-10">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-xl font-bold">My App</h1>
+        <ul className="flex space-x-4">
+          <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
+          <li><Link to="/info" className="hover:text-gray-300">Info</Link></li>
+          <li><Link to="/features" className="hover:text-gray-300">Features</Link></li>
+          <li><Link to="/contact" className="hover:text-gray-300">Contact</Link></li>
+          <li><Link to="/download" className="hover:text-gray-300">Download</Link></li>
+        </ul>
+      </div>
+    </nav>
+  );
+}
 
-    return (
-        <section id="navbar">
-        <div className='flex h-12 justify-between items-center mx-10 py-3 my-10'>
-            <div className="left text-4xl font-medium">
-                <h1>Vs</h1>
-            </div>
-            <div className="right md:flex text-2xl gap-4 hidden">
-                <motion.div
-                    whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
-                    className="cursor-pointer"
-                >
-                    <a href='https://www.linkedin.com/in/vivek-shaurya/' target='_blank'>
-                        <FaLinkedin className="text-2xl  hover:text-blue-700" /></a>
-                </motion.div>
-                <motion.div
-                    whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
-                    className="cursor-pointer"
-                >
-                    <a href='https://github.com/MRPERFECT0603' target='_blank'>
-                        <FaGithub className="text-2xl hover:text-gray-800" /></a>
-                </motion.div>
-                <motion.div
-                    whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
-                    className="cursor-pointer"
-                >
-                    <a href='https://leetcode.com/u/VivekShaurya/' target='_blank'>
-                        <SiLeetcode className="text-2xl  hover:text-orange-600" /></a>
-                </motion.div>
-                <motion.div
-                    whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
-                    className="cursor-pointer"
-                >
-                    <a href='https://medium.com/@vivek_shaurya' target='_blank'>
-                        <SiMedium className="text-2xl hover:text-black" /></a>
-                </motion.div>
-                <motion.div
-                    whileHover={{ scale: 1.3, rotate: [-8, 8, -6, 6, 0], transition: { duration: 0.3 } }}
-                    className="cursor-pointer"
-                >
-                    <a href='https://discordapp.com/users/mrperfect06#4663' target='_blank'>
-                        <FaDiscord className="text-2xl hover:text-purple-800" /></a>
-                </motion.div>
-            </div>
-            <div className='flex md:hidden text-2xl'>
-                {menuOpen ? (
-                    <div className="flex flex-col items-end mt-12">
-                        <IoClose onClick={toggleMenu} />
-                        <div className='bg-transparent text-2xl flex flex-row gap-4 p-4 pr-0 rounded-md '>
-                            <a href='https://www.linkedin.com/in/vivek-shaurya/' target='_blank'>
-                                <FaLinkedin /></a>
-                            <a href='https://github.com/MRPERFECT0603' target='_blank'>
-                                <FaGithub /></a>
-                            <a href='https://leetcode.com/u/VivekShaurya/' target='_blank'>
-                                <SiLeetcode /></a>
-                            <a href='https://medium.com/@vivek_shaurya' target='_blank'>
-                                <SiMedium /></a>
-                            <a href='https://discordapp.com/users/mrperfect06#4663' target='_blank'>
-                                <FaDiscord /></a>
-                        </div>
-                    </div>
-                ) : (
-                    <IoMenu onClick={toggleMenu} />
-                )}
-            </div>
-        </div>
-
-        </section>
-    );
-};
 
 export default Navbar;
