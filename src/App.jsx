@@ -1,6 +1,5 @@
 // src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Info from "./components/Info";
@@ -10,22 +9,18 @@ import Download from "./components/Download";
 
 function App() {
   return (
-    <Router>
-      <div className="font-sans">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/info" element={<Info />} />
-          <Route path="/features" element={<Features />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/download" element={<Download />} />
-        </Routes>
+    <div className="font-sans">
+      <Navbar />
+
+      <div className="container mx-auto px-4">
+        <Home />
+        <Info />
+        <Features />
+        <Contact />
+        <Download />
       </div>
-    </Router>
+    </div>
   );
 }
-
-
-
 
 export default App;
