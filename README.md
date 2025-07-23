@@ -1,8 +1,32 @@
-# React + Vite
+# 🚀 Developer Portfolio - React + Vite + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a fully responsive, animated personal portfolio website built with **React**, **Vite**, **Tailwind CSS**, and **Framer Motion**. It includes vertical navigation, interactive sections, and smooth transitions to showcase your work professionally.
 
-Currently, two official plugins are available:
+![Screenshot](./public/portfolio-preview.png) <!-- Replace with your actual image path -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🧰 Tech Stack
+
+- ⚛️ **React** – Frontend framework
+- ⚡ **Vite** – Fast development build tool
+- 🎨 **Tailwind CSS** – Utility-first styling
+- 🎞️ **Framer Motion** – Animations
+- 🌐 **Netlify** – Deployment & CI/CD
+- 🧹 ESLint + PostCSS – Code formatting & optimization
+
+---
+
+## 📁 Folder Structure
+
+```bash
+.
+├── public/               # Static assets (images, icons)
+├── src/                  # Main app code
+│   ├── components/       # React components
+│   ├── pages/            # Individual sections
+│   └── App.jsx           # Root app
+├── index.html            # Entry HTML
+├── tailwind.config.js    # Tailwind setup
+├── vite.config.js        # Vite build config
+└── netlify.toml          # Netlify deployment config
